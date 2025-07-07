@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hero">
+    <div class="selector">
+      <div id="selectorField">
+        <p id="selectText">Select Sociel Media</p>
+        <img  src="SelectMenu_Img/arrow.png"  id="arrowicon">
+      </div>
+      <ul id="list" class="hide">
+        <li class="options">
+          <img src="SelectMenu_Img/facebook.png" alt="facebook">
+          <p>Facebook</p>
+        </li>
+        <li class="options">
+          <img src="SelectMenu_Img/instagram.png" alt="facebook">
+          <p>Instragram</p>
+        </li>
+        <li class="options">
+          <img src="SelectMenu_Img/twitter.png" alt="facebook">
+          <p>Twiter</p>
+        </li>
+        <li class="options">
+          <img src="SelectMenu_Img/pinterest.png" alt="facebook">
+          <p>Pinterest</p>
+          <li class="options">
+            <img src="SelectMenu_Img/whatsapp.png" alt="facebook">
+            <p>whatsapp</p>
+          </li>
+          <li class="options">
+            <img src="SelectMenu_Img/facebook.png" alt="facebook">
+            <p>Facebook</p>
+          </li> 
+      </ul>
+    </div>
+  </div>
+  <script>
+    var selectorFeild = document.getElementById("selectorField");
+    var selectText = document.getElementById("selectText");
+    var options = document.getElementsByClassName("options");
+    var list = document.getElementById("list");
+    var arrowicon = document.getElementById("arrowicon");
+
+    selectorFeild.onclick = function(){
+      list.classList.toggle("hide");
+      arrowicon.classList.toggle("rotate");
+
+    }
+    for(option of options){
+      option.onclick = function(){
+        selectText.innerHTML = this.textContent;
+        list.classList.toggle("hide");
+        arrowicon.classList.toggle("rotate");
+      }
+    }
+  </script>
+</body>
+</html>
